@@ -1,0 +1,3 @@
+[submodule "dgs2utils"]
+	path = dgs2utils
+	url = https://github.com/hguandl/dgs2utils.git
