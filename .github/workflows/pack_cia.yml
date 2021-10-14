@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build ROM Tools
+name: Repack localized DLC to CIA
 
 # Controls when the workflow will run
 on:
@@ -20,8 +20,11 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Build tools
-        run: ./ci/build_tools.sh
+      - name: Prepare resources
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade
+          wget 
 
       - name: Upload to GitHub release
         run: |
