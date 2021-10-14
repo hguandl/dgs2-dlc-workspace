@@ -2,8 +2,8 @@
 
 set -e -o pipefail
 
-apt-get update
-apt-get install -y cmake ninja-build
+sudo apt-get update
+sudo apt-get install -y cmake ninja-build
 
 git clone https://github.com/3DSGuy/Project_CTR.git
 pushd Project_CTR
