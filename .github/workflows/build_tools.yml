@@ -27,4 +27,4 @@ jobs:
         run: |
           wget https://github.com/cli/cli/releases/download/v2.1.0/gh_2.1.0_linux_amd64.deb
           sudo dpkg -i gh_2.1.0_linux_amd64.deb
-          gh upload v1.0 rom_tools.tar.gz --clobber 
+          gh release upload v1.0 rom_tools.tar.gz --clobber 
