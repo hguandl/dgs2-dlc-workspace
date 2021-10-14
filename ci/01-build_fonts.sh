@@ -25,7 +25,7 @@ $FONT_DB_EXE merge -o $FONT_RES_DIR/font02_jpn_list.json \
     ./font_acg/font02_acg.json $FONT_RES_DIR/msg_text.json
 cp font_acg/font03_acg.json $FONT_RES_DIR/font03_jpn_list.json
 
-$GFD_EXE generate -i $FONT_RES_DIR -f ./external/ttf/hanyi-65s.ttf -n 00 -o $ROMFS_DIR/font
-$GFD_EXE generate -i $FONT_RES_DIR -f ./external/ttf/dayasong.ttf -n 01 -o $ROMFS_DIR/font
-$GFD_EXE generate -i $FONT_RES_DIR -f ./external/ttf/dayasong.ttf -n 02 -o $ROMFS_DIR/font
-$GFD_EXE generate -i $FONT_RES_DIR -f ./external/ttf/SourceHanSans-Bold.otf -n 03 -o $ROMFS_DIR/font
+$GFD_EXE generate -i $FONT_RES_DIR -f ./external/hanyi-65s.ttf -n 00 -o $ROMFS_DIR/font
+$GFD_EXE generate -i $FONT_RES_DIR -f ./external/dayasong.ttf -n 01 -o $ROMFS_DIR/font
+$GFD_EXE generate -i $FONT_RES_DIR -f ./external/dayasong.ttf -n 02 -o $ROMFS_DIR/font
+$GFD_EXE generate -i $FONT_RES_DIR -f ./external/SourceHanSans-Bold.otf -n 03 -o $ROMFS_DIR/font

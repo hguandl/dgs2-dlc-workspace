@@ -3,7 +3,7 @@
 set -e -o pipefail
 
 BIN="./external/bin"
-DLC_FILE="./external/rom/0004008C001AE200.cia"
+DLC_FILE="./external/0004008C001AE200.cia"
 REPACK_DIR="./build/repack"
 
 mkdir -p $REPACK_DIR
