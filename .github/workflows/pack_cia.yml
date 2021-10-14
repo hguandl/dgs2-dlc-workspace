@@ -36,6 +36,7 @@ jobs:
           gh auth login --with-token < token.txt
           gh release download v1.0 -D external
           tar zxf external/rom_tools.tar.gz -C external
+          git submodule update --init --recursive 
 
       - name: Unpack original DLC ROM
         run: ./ci/00-unpack_dlc.sh
