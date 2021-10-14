@@ -28,8 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Prepare resources
         run: |
-          sudo apt-get update
-          sudo apt-get upgrade
           wget https://github.com/cli/cli/releases/download/v2.1.0/gh_2.1.0_linux_amd64.deb
           sudo dpkg -i gh_2.1.0_linux_amd64.deb
           echo ${{ secrets.GITHUB_TOKEN }} > token.txt
@@ -37,7 +35,7 @@ jobs:
           gh release download v1.0 -D external
           tar zxf external/rom_tools.tar.gz -C external
           git submodule update --init --recursive
-          pip3 install -r requirements.txt 
+          pip3 install --user -r dgs2utils/requirements.txt 
 
       - name: Unpack original DLC ROM
         run: ./ci/00-unpack_dlc.sh
