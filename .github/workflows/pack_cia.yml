@@ -4,6 +4,12 @@ name: Repack localized DLC to CIA
 
 # Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -24,12 +30,30 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get upgrade
-          wget 
-
-      - name: Upload to GitHub release
-        run: |
-          echo ${{ secrets.GITHUB_TOKEN }} > token.txt
           wget https://github.com/cli/cli/releases/download/v2.1.0/gh_2.1.0_linux_amd64.deb
           sudo dpkg -i gh_2.1.0_linux_amd64.deb
+          echo ${{ secrets.GITHUB_TOKEN }} > token.txt
           gh auth login --with-token < token.txt
-          gh release upload v1.0 rom_tools.tar.gz --clobber 
+          gh release download v1.0 -D external
+          tar zxf external/rom_tools.tar.gz -C external
+
+      - name: Unpack original DLC ROM
+        run: ./ci/00-unpack_dlc.sh
+
+      - name: Build fonts
+        run: ./ci/01-build_fonts.sh
+
+      - name: Repack text files to GMD
+        run: ./ci/02-repack_texts.sh
+
+      - name: Put localized images
+        run: ./ci/03-put_images.sh
+
+      - name: Repack ROM
+        run: ./ci/04-repack_dlc.sh
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Packed DLC
+          path: ./build/dgs2-dlc-cn.cia
+          if-no-files-found: error
