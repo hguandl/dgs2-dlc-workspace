@@ -18,7 +18,7 @@ $FONT_DB_EXE count -d ./msg_dump -o $FONT_RES_DIR/msg_text.json
 $FONT_DB_EXE count -d ./script_dump -o $FONT_RES_DIR/script_text.json
 
 $FONT_DB_EXE merge -o $FONT_RES_DIR/font00_jpn_list.json \
-    ./font_acg/font00_acg.json $FONT_RES_DIR/script_text.json
+    ./font_acg/font00_acg.json $FONT_RES_DIR/msg_text.json $FONT_RES_DIR/script_text.json
 $FONT_DB_EXE merge -o $FONT_RES_DIR/font01_jpn_list.json \
     ./font_acg/font01_acg.json $FONT_RES_DIR/msg_text.json
 $FONT_DB_EXE merge -o $FONT_RES_DIR/font02_jpn_list.json \
