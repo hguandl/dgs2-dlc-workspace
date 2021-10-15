@@ -10,6 +10,11 @@
 - 测试：自由ASH、F君
 - 特别感谢：ICE AGE、鹅糯多脂
 
+### 下载地址
+
+- 正式版请从 [Releases](https://github.com/hguandl/dgs2-dlc-workspace/releases/latest) 获取
+- 开发版请从 [Actions](https://github.com/hguandl/dgs2-dlc-workspace/actions/workflows/pack_cia.yml) 获取
+
 ### TODO
 
 - [ ] 字库字体的高度问题
