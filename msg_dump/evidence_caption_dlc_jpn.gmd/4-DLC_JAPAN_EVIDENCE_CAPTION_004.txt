@@ -1,3 +1,3 @@
 <RUBY><RB>帝都勇盟大学</RB><RT><COL 5A563C></COL></RT></RUBY>的学生证
-是展示身份的“<RUBY><RB>证</RB><RT><COL 5A563C></COL></RT></RUBY>”。
+是展示身份的“<RUBY><RB>证明</RB><RT><COL 5A563C></COL></RT></RUBY>”。
 一直放在学生服上。
